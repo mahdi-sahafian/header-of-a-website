@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./tailwind.js"></script>
+    <script>
+      try {
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                vazir: "'Vazir', sans-serif",
+              },
+            },
+          },
+        };
+      } catch {}
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        @font-face {
+          font-family: "Vazir";
+          font-weight: normal;
+          src: url("./fonts/Vazir.ttf");
+        }
+
+        @font-face {
+          font-family: "Vazir";
+          font-weight: bold;
+          src: url("./fonts/Vazir-Bold.ttf");
+        }
+      }
+
+      @layer utilities {
+        .max-width-wrapper {
+        @apply mx-auto px-4 max-w-5xl;
+        }
+        .primary-gradient {
+        @apply  bg-gradient-to-l from-pink-500 via-red-500 to-yellow-500;
+        }
+      }
+
+    </style>
+  </head>
+  <body class="font-vazir bg-gray-400 min-h-[1000px]">
+    <div id="super-header" class="primary-gradient h-2"></div>
+    <header id="header" class="sticky z-index: 10 bg-white bg-opacity-50 top-0">
+      <div id="header-inner-wrapper" class="max-width-wrapper py-4 flex flex-row justify-between">
+        <nav>
+          <h1 id="heading" class="text-bold text-gray-800 border border-r-0 border-l-0 border-t-2 border-b-2 border-black border-dotted">
+            <a href="#">گالری&nbsp;بستنی</a>
+          </h1>
+        </nav>
+        <div id="search-wrapper" class="mr-4 relative">
+          <img src="images/search.svg" id="search-icon" class="left-4 top-1.5 h-4 absolute" />
+          <input type="text" placeholder="قیفی" id="search-input" class="w-full outline-none text-sm text-gray-700 py-1 px-4 rounded-full border border-gray-400 border-1"/>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
